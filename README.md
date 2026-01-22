@@ -16,9 +16,17 @@ The goal is to generate actionable business insights and predict customer churn.
 ---
 
 ## 🧩 Datasets Used
-1. **Retail Transactions** – Customer purchases, revenue, country-wise sales
-2. **Customer Support Tickets** – Ticket status, resolution time, satisfaction
-3. **Telecom Customer Data** – Customer demographics, services, churn information
+
+1. **Retail Transactions**  
+   [Retail Dataset on Kaggle](https://www.kaggle.com/code/mashlyn/onlineretail-ii-simple-eda)  
+   > **Note:** This file is too large to upload to GitHub. Please download and place it in `notebooks/data/` to run the notebooks.
+
+2. **Customer Support Tickets**  
+   Small CSV uploaded in `notebooks/data/`  
+
+3. **Telecom Customer Data**  
+   Small CSV uploaded in `notebooks/data/`
+
 
 ---
 
