@@ -15,18 +15,27 @@ The goal is to generate actionable business insights and predict customer churn.
 
 ---
 
-## 🧩 Datasets Used
+## 📁 Datasets used
 
-1. **Retail Transactions**  
-   [Retail Dataset on Kaggle](https://www.kaggle.com/code/mashlyn/onlineretail-ii-simple-eda)  
+This project uses three datasets:
+
+1. **Retail Transactions Dataset**
+   - File size is very large, so the raw dataset is **not uploaded to GitHub**
+   - Used for revenue and sales analysis
+   - Source: Kaggle (Online Retail Dataset)
+   - Cleaned and processed within the notebooks
+    [Retail Dataset on Kaggle](https://www.kaggle.com/code/mashlyn/onlineretail-ii-simple-eda)  
    > **Note:** This file is too large to upload to GitHub. Please download and place it in `notebooks/data/` to run the notebooks.
 
-2. **Customer Support Tickets**  
-   Small CSV uploaded in `notebooks/data/`  
+2. **Customer Support Tickets Dataset**
+   - Used for ticket volume, resolution time, and customer satisfaction analysis
+     Small CSV uploaded in `notebooks/data/`  
 
-3. **Telecom Customer Data**  
-   Small CSV uploaded in `notebooks/data/`
+3. **Telecom Customer Churn Dataset**
+   - Used for churn prediction and customer behavior analysis
+     Small CSV uploaded in `notebooks/data/`
 
+⚠️ Note: Due to size limitations, large raw datasets are excluded. All analysis steps are reproducible using the provided notebooks.
 
 ---
 
@@ -79,10 +88,24 @@ The goal is to generate actionable business insights and predict customer churn.
 ---
 
 ## 📂 Repository Structure
-data/ → cleaned datasets
-notebooks/ → project notebooks
-sql/ → SQL queries
-visualizations/ → saved charts
+
+Customer-Analytics-Churn-Prediction-Project/
+│
+├── notebooks/
+│ ├── data/
+│ │ └── cleaned_data.csv
+│ │
+│ ├── Phase_1_Data_Cleaning.ipynb
+│ ├── Phase_2_SQL_Analysis.ipynb
+│ ├── Phase_3_ML_Model.ipynb
+│ └── Phase_4_Data_Visualization.ipynb
+│
+├── sql/
+│ ├── sqlqueries_README.md
+│ └── SQL_Query_Output
+│
+├── README.md
+└── requirements.txt
 
 ---
 
