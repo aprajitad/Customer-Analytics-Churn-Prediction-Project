@@ -87,6 +87,24 @@ This project uses three datasets:
 
 ---
 
+📌 How to Run the Project
+
+Clone the repository
+
+git clone https://github.com/aprajitad/Customer-Analytics-Churn-Prediction-Project.git
+
+
+Install required libraries
+
+pip install -r requirements.txt
+
+
+Open Jupyter Notebook
+
+Run notebooks phase by phase in order
+
+---
+
 ## 📂 Repository Structure
 
 Customer-Analytics-Churn-Prediction-Project/
