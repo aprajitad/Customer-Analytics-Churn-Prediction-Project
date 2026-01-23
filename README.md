@@ -107,8 +107,6 @@ Customer-Analytics-Churn-Prediction-Project/
 ├── README.md
 └── requirements.txt
 
----
-
 ## 👤 Author
 **Aprajita Dixit**  
 Data Analyst | Business Analyst
