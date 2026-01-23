@@ -107,7 +107,7 @@ Run notebooks phase by phase in order
 
 ## 📂 Repository Structure
 
-Customer-Analytics-Churn-Prediction-Project/
+''' Customer-Analytics-Churn-Prediction-Project/
 │
 ├── notebooks/
 │ ├── data/
@@ -123,7 +123,7 @@ Customer-Analytics-Churn-Prediction-Project/
 │ └── SQL_Query_Output.xlsx
 │
 ├── README.md
-└── requirements.txt
+└── requirements.txt '''
 
 **Author: Aprajita Dixit**
 Data Analyst|Business Analyst
