@@ -87,28 +87,3 @@ This project uses three datasets:
 
 ---
 
-## 📂 Repository Structure
-
-Customer-Analytics-Churn-Prediction-Project/
-│
-├── notebooks/
-│ ├── data/
-│ │ └── cleaned_data.csv
-│ │
-│ ├── Phase_1_Data_Cleaning.ipynb
-│ ├── Phase_2_SQL_Analysis.ipynb
-│ ├── Phase_3_ML_Model.ipynb
-│ └── Phase_4_Data_Visualization.ipynb
-│
-├── sql/
-│ ├── sqlqueries_README.md
-│ └── SQL_Query_Output
-│
-├── README.md
-└── requirements.txt
-
-## 👤 Author
-**Aprajita Dixit**  
-Data Analyst | Business Analyst
-
-## 📂 Repository Structure
