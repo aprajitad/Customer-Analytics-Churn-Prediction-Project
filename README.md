@@ -1,8 +1,8 @@
 # Customer Analytics & Churn Prediction Project
 
 ## 📌 Project Overview
-This project analyzes customer behavior, sales performance, support efficiency, and churn patterns using real-world styled datasets.  
-The goal is to generate actionable business insights and predict customer churn.
+This project analyzes customer behavior, sales performance, customer support efficiency, and churn patterns using real-world styled datasets.  
+The goal is to generate **actionable business insights** and understand **factors influencing customer churn**.
 
 ---
 
@@ -10,32 +10,45 @@ The goal is to generate actionable business insights and predict customer churn.
 - Understand revenue trends and top-performing regions
 - Analyze customer purchasing behavior
 - Evaluate customer support efficiency
-- Identify churn drivers and predict churn
-- Present insights through visualizations
+- Identify churn drivers
+- Present insights using clear visualizations
 
 ---
 
-## 📁 Datasets used
+## 📁 Datasets Used
 
-This project uses three datasets:
+This project uses **three datasets**:
 
-1. **Retail Transactions Dataset**
-   - File size is very large, so the raw dataset is **not uploaded to GitHub**
-   - Used for revenue and sales analysis
-   - Source: Kaggle (Online Retail Dataset)
-   - Cleaned and processed within the notebooks
-    [Retail Dataset on Kaggle](https://www.kaggle.com/code/mashlyn/onlineretail-ii-simple-eda)  
-   > **Note:** This file is too large to upload to GitHub. Please download and place it in `notebooks/data/` to run the notebooks.
+### 1️⃣ Retail Transactions Dataset
+- Used for revenue, sales trends, and product analysis
+- **Large file — not uploaded to GitHub due to size limits**
+- Source: Kaggle (Online Retail Dataset)
 
-2. **Customer Support Tickets Dataset**
-   - Used for ticket volume, resolution time, and customer satisfaction analysis
-     Small CSV uploaded in `notebooks/data/`  
+🔗 Kaggle link:  
+[Online Retail Dataset](https://www.kaggle.com/code/mashlyn/onlineretail-ii-simple-eda)
 
-3. **Telecom Customer Churn Dataset**
-   - Used for churn prediction and customer behavior analysis
-     Small CSV uploaded in `notebooks/data/`
+> **Note:**  
+> Download the dataset from Kaggle and place it inside:  
+> `notebooks/data/retail_cleaned.csv`  
+> to run the notebooks successfully.
 
-⚠️ Note: Due to size limitations, large raw datasets are excluded. All analysis steps are reproducible using the provided notebooks.
+---
+
+### 2️⃣ Customer Support Tickets Dataset
+- Used for ticket volume, resolution time, and customer satisfaction analysis
+- Cleaned CSV is uploaded to GitHub  
+- Location: `notebooks/data/`
+
+---
+
+### 3️⃣ Telecom Customer Churn Dataset
+- Used for churn analysis and modeling
+- Cleaned CSV is uploaded to GitHub  
+- Location: `notebooks/data/`
+
+⚠️ **Important:**  
+Large raw datasets are excluded due to GitHub size limits.  
+All analysis steps remain **fully reproducible** using the provided notebooks.
 
 ---
 
@@ -49,83 +62,90 @@ This project uses three datasets:
 ---
 
 ## 📊 Project Phases
+
 ### Phase 1: Business Understanding
 - Defined business problems and KPIs
-- Identified churn and revenue-related questions
+- Identified revenue and churn-related questions
 
 ### Phase 2: Data Cleaning & Preparation
-- Removed missing and inconsistent values
-- Created derived metrics (TotalAmount, Churn_flag)
-- Saved cleaned datasets
+- Handled missing and inconsistent values
+- Created derived metrics (e.g., `TotalAmount`, `Churn_flag`)
+- Saved cleaned datasets for analysis
 
 ### Phase 3: SQL Analysis
 - Revenue by country and month
 - Top-selling products
-- Ticket resolution performance
+- Support ticket performance
 - Churn rate by contract type
-- Queries saved for Power BI use
+- SQL outputs saved as CSV files
 
 ### Phase 4: Machine Learning Modeling
-- Churn prediction using classification models
-- Feature selection and model evaluation
-- Performance comparison
+- Churn analysis using classification models
+- Feature selection and evaluation
+- Model performance comparison
 
 ### Phase 5: Data Visualization
 - Revenue trends
 - Product performance
 - Support ticket distribution
-- Churn behavior analysis
+- Churn behavior insights
 
 ---
 
 ## 📈 Key Insights
-- A small number of countries contribute the majority of revenue
-- Month-to-month revenue trends show seasonality
-- Customers with month-to-month contracts churn more
-- Higher monthly charges are linked to churn
-- Faster support resolution improves satisfaction
+- A small number of countries generate the majority of revenue
+- Revenue shows seasonal trends over time
+- Customers on month-to-month contracts have higher churn
+- Higher monthly charges are associated with churn
+- Faster ticket resolution improves customer satisfaction
 
 ---
 
-📌 How to Run the Project
+## ▶️ How to Run the Project
 
-Clone the repository
-
+1️⃣ Clone the repository
+```bash
 git clone https://github.com/aprajitad/Customer-Analytics-Churn-Prediction-Project.git
-
-
-Install required libraries
+2️⃣ Install required libraries
 
 pip install -r requirements.txt
 
 
-Open Jupyter Notebook
-
-Run notebooks phase by phase in order
-
----
+3️⃣ Open Jupyter Notebook
+Run notebooks phase-by-phase in order
 
 ## 📂 Repository Structure
 
-''' Customer-Analytics-Churn-Prediction-Project/
+Customer-Analytics-Churn-Prediction-Project/
 │
 ├── notebooks/
-│ ├── data/
-│ │ └── cleaned_data.csv
-│ │
-│ ├── Phase_1_Data_Cleaning.ipynb
-│ ├── Phase_2_SQL_Analysis.ipynb
-│ ├── Phase_3_ML_Model.ipynb
-│ └── Phase_4_Data_Visualization.ipynb
+│   ├── data/
+│   │   ├── support_cleaned.csv
+│   │   ├── telco_cleaned.csv
+│   │   └── retail_cleaned.csv (download from Kaggle)
+│   │
+│   ├── Phase_1_Business_Understanding.ipynb
+│   ├── Phase_2_Data_Cleaning.ipynb
+│   ├── Phase_3_SQL_Analysis.ipynb
+│   ├── Phase_4_ML_Modeling.ipynb
+│   └── Phase_5_Visualization.ipynb
 │
 ├── sql/
-│ ├── SQL_Queries_README.md
-│ └── SQL_Query_Output.xlsx
+│   ├── phase3_sql_queries.sql
+│   ├── sql_outputs/
+│   │   └── *.csv
+│   └── README.md
 │
-├── README.md
-└── requirements.txt '''
+├── visualizations/
+│   └── *.png
+│
+├── requirements.txt
+└── README.md
 
-**Author: Aprajita Dixit**
-Data Analyst|Business Analyst
+👤 Author
+
+Aprajita Dixit
+Aspiring Data Analyst | Business Analyst
 
 
+---
