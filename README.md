@@ -125,13 +125,13 @@ Customer-Analytics-Churn-Prediction-Project/
 │   │   └── retail_cleaned.csv (download from Kaggle)
 │   │
 │   ├── Phase_1_Business_Understanding.ipynb
-│   ├── Phase_2_Data_Cleaning.ipynb
+│   ├── Phase_2_Data_Loading_and_Cleaning.ipynb
 │   ├── Phase_3_SQL_Analysis.ipynb
 │   ├── Phase_4_ML_Modeling.ipynb
-│   └── Phase_5_Visualization.ipynb
+│   └── Phase_5_Data_Visualization.ipynb
 │
 ├── sql/
-│   ├── phase3_sql_queries.sql
+│   ├── sqlqueries_README.md
 │   ├── sql_outputs/
 │   │   └── *.csv
 │   └── README.md
@@ -145,7 +145,7 @@ Customer-Analytics-Churn-Prediction-Project/
 👤 Author
 
 Aprajita Dixit
-Aspiring Data Analyst | Business Analyst
+Data Analyst | Business Analyst
 
 
 ---
