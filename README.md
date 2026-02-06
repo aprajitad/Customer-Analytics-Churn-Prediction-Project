@@ -141,11 +141,16 @@ Customer-Analytics-Churn-Prediction-Project/
 │
 ├── requirements.txt
 └── README.md
+```
 
-👤 Author
+---
 
-Aprajita Dixit
-Data Analyst | Business Analyst
+## 👤 Author
+
+**Aprajita Dixit**  
+**Data Analyst | Business Analyst | SQL | Python | Power BI**  
+GitHub: https://github.com/aprajitad
+
 
 
 ---
