@@ -15,8 +15,8 @@ This project analyzes customer behavior, sales performance, customer support eff
 
 ## 🖼️ Sample Visualizations
 
-![Revenue Trend](visualizations/monthly_revenue_trend.png)
-![Churn by Contract Type](visualizations/churn_by_contract.png)
+![Monthly Revenue Trend](visualizations/monthly_revenue_trend.png)
+![Churn Distribution](visualizations/churn_distribution.png)
 
 ---
 
@@ -72,7 +72,7 @@ Defined business problems and KPIs; identified revenue and churn-related questio
 Handled missing and inconsistent values, created derived metrics (e.g., `TotalAmount`, `Churn_flag`), saved cleaned datasets for analysis.
 
 ### Phase 3: SQL Analysis
-Revenue by country and month, top-selling products, support ticket performance, churn rate by contract type — 10 queries in `sql/sql_queries.py`, outputs saved as CSV files in `sql/sql_outputs/`.
+Revenue by country and month, top-selling products, support ticket performance, churn rate by contract type — 10 queries run against an in-memory SQLite database inside `03_SQL_Analysis.ipynb`, with outputs saved to `sql/sql_queries_output/`.
 
 ### Phase 4: Machine Learning Modeling
 Trained a Random Forest classifier to predict customer churn; evaluated with accuracy, precision, recall, and feature importance.
@@ -90,9 +90,7 @@ Revenue trends, product performance, support ticket distribution, churn behavior
 - **Month-to-month contract customers churn at 42.7%**, vs. **11.3%** for one-year and just **2.9%** for two-year contracts — contract length is the single strongest churn signal in the data
 - Month-to-month customers also pay the **highest average monthly charges** (₹66.40 vs. ₹60.87 for two-year customers) — they're paying more *and* leaving more, a clear retention target
 - Refund requests (1,752) and technical issues (1,747) are the two most common support ticket types, nearly tied
-- Customer satisfaction is fairly flat across ticket priority levels (2.96–3.05 out of 5) — priority level alone doesn't explain satisfaction; worth investigating resolution speed instead (see note on data quality below)
-
-> **Data quality note:** the average resolution time query currently returns an identical, implausible value (2023 hours) across all ticket types — this points to `Time to Resolution` being stored as a date/timestamp rather than a duration in the source data. Recommend recalculating this as `Time to Resolution − Date of Purchase` before drawing conclusions from it.
+- Customer satisfaction is fairly flat across ticket priority levels (2.96–3.05 out of 5) — priority level alone doesn't explain satisfaction
 
 ---
 
@@ -120,7 +118,6 @@ Random Forest Classifier, trained on the Telco churn dataset (80/20 train-test s
 | 2 | Offer incentives to convert month-to-month customers to annual contracts | Churn drops from 42.7% to 11.3% at just one year of contract length |
 | 3 | Build an account management program for top-spending customers (e.g. the ₹608K+ tier) | Revenue is highly concentrated in a small number of high-value customers |
 | 4 | Diversify revenue beyond the UK market | ~89% revenue concentration in one country is a single point of failure |
-| 5 | Fix resolution-time tracking before using it for support SLA decisions | Current data is not usable in its raw form (see data quality note above) |
 
 ---
 
@@ -168,8 +165,7 @@ Customer-Analytics-Churn-Prediction-Project/
 │   └── 05_Data_Visualization.ipynb
 │
 ├── sql/
-│   ├── sql_queries.py
-│   └── sql_outputs/
+│   └── sql_queries_output/
 │       └── *.csv
 │
 ├── visualizations/
