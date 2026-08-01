@@ -17,6 +17,7 @@ This project analyzes customer behavior, sales performance, customer support eff
 
 ![Monthly Revenue Trend](visualizations/monthly_revenue_trend.png)
 ![Churn Distribution](visualizations/churn_distribution.png)
+![Contract Type vs Churn](visualizations/contract_type_vs_churn.png)
 
 ---
 
@@ -75,7 +76,7 @@ Handled missing and inconsistent values, created derived metrics (e.g., `TotalAm
 Revenue by country and month, top-selling products, support ticket performance, churn rate by contract type — 10 queries run against an in-memory SQLite database inside `03_SQL_Analysis.ipynb`, with outputs saved to `sql/sql_queries_output/`.
 
 ### Phase 4: Machine Learning Modeling
-Trained a Random Forest classifier to predict customer churn; evaluated with accuracy, precision, recall, and feature importance.
+Trained a Random Forest classifier to predict customer churn; evaluated with accuracy, precision, recall, and feature importance. Also tested class-balancing to address churn-class imbalance — see Model Performance below for results.
 
 ### Phase 5: Data Visualization
 Revenue trends, product performance, support ticket distribution, churn behavior insights.
@@ -106,7 +107,7 @@ Random Forest Classifier, trained on the Telco churn dataset (80/20 train-test s
 
 **Overall accuracy: 79%**
 
-**Honest read:** the model is noticeably better at correctly identifying customers who *won't* churn than those who will — it catches under half (48%) of actual churners. This is a common pattern with imbalanced churn data and a reasonable baseline, but a production system would benefit from class balancing (e.g. `class_weight="balanced"` or SMOTE) to improve churn-class recall specifically, since missing a churner is more costly to the business than a false alarm.
+**Honest read:** the model is noticeably better at correctly identifying customers who *won't* churn than those who will — it catches under half (48%) of actual churners. Class-balancing (`class_weight="balanced"`) was tested as a potential fix but slightly reduced recall (0.45) rather than improving it, so the original unweighted model was kept. This is a common pattern with imbalanced churn data; a production system would likely need additional features or a different resampling technique (e.g. SMOTE) to meaningfully improve churn-class recall.
 
 ---
 
