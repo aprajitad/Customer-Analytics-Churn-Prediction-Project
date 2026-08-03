@@ -66,7 +66,7 @@ Defined business problems and KPIs; identified revenue and churn-related questio
 Loads raw data from `data/`, handles missing and inconsistent values, creates derived metrics (e.g., `TotalAmount`, `Churn_flag`), and saves cleaned datasets to `notebooks/data/` for the rest of the pipeline.
 
 ### Phase 3: SQL Analysis
-Revenue by country and month, top-selling products, support ticket performance, churn rate by contract type — 10 queries run against an in-memory SQLite database inside `03_SQL_Analysis.ipynb`, with outputs saved to `sql_queries_output/`.
+Revenue by country and month, top-selling products, support ticket performance, churn rate by contract type — 10 queries run against an in-memory SQLite database inside `03_SQL_Analysis.ipynb`, with outputs saved to `sql_outputs/`.
 
 ### Phase 4: Machine Learning Modeling
 Trained a Random Forest classifier to predict customer churn; evaluated with accuracy, precision, recall, and feature importance. Also tested class-balancing to address churn-class imbalance — see Model Performance below for results.
@@ -146,27 +146,38 @@ Open Jupyter and run the notebooks **in order**:
 ```
 Customer-Analytics-Churn-Prediction-Project/
 │
-├── data/                          
-│   ├── online_retail_II.csv
-│   ├── support_tickets.csv
-│   └── telco_customer_churn.csv
-│
 ├── notebooks/
 │   ├── 01_Business_Understanding.ipynb
 │   ├── 02_Data_Loading_and_Cleaning.ipynb
 │   ├── 03_SQL_Analysis.ipynb
 │   ├── 04_ML_Modeling.ipynb
 │   └── 05_Data_Visualization.ipynb
-│ 
 │
-├── sql_queries_output/
-│   └── *.csv
+├── sql_queries_outputs/
+│   ├── churn_contract.csv
+│   ├── monthly_contract.csv
+│   ├── monthly_revenue.csv
+│   ├── resolution_time.csv
+│   ├── revenue_country.csv
+│   ├── satisfaction_priority.csv
+│   ├── ticket_type.csv
+│   ├── top_customers.csv
+│   ├── top_products.csv
+│   └── top_support_customers.csv
 │
 ├── visualizations/
-│   └── *.png
+│   ├── churn_distribution.png
+│   ├── contract_type_vs_churn.png
+│   ├── monthly_revenue_trend.png
+│   ├── monthlycharges_vs_churn.png
+│   ├── revenue_by_country.png
+│   ├── ticket_status_distribution.png
+│   ├── ticketvolume_by_ticketstatus.png
+│   └── top_selling_products.png
 │
 ├── requirements.txt
 └── README.md
+
 ```
 
 ---
