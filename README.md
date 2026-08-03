@@ -9,7 +9,7 @@
 
 This project analyzes customer behavior, sales performance, customer support efficiency, and churn patterns using real-world styled datasets. The goal is to generate **actionable business insights** and understand **factors influencing customer churn**.
 
-> ⚠️ **Note before running:** the retail transactions dataset is not included in this repo due to GitHub file size limits. See the Datasets section below for the download link and where to place it.
+> ⚠️ **Note before running:** raw datasets are not included in this repo (see Datasets section below for download links and setup instructions).
 
 ---
 
@@ -33,22 +33,15 @@ This project analyzes customer behavior, sales performance, customer support eff
 
 ## 📁 Datasets Used
 
-This project uses **three datasets**:
+This project uses **three datasets, all sourced from Kaggle**. Raw files are not included in this repo — download them and run `02_Data_Loading_and_Cleaning.ipynb` to generate the cleaned versions used by the rest of the notebooks.
 
-### 1️⃣ Retail Transactions Dataset
-- 805,549 transaction records — revenue, sales trends, and product analysis
-- **Large file — not uploaded to GitHub due to size limits**
-- Source: [Kaggle — Online Retail Dataset](https://www.kaggle.com/code/mashlyn/onlineretail-ii-simple-eda)
+| Dataset | Source | Save as |
+|---|---|---|
+| Online Retail II | [Kaggle link](https://www.kaggle.com/code/mashlyn/onlineretail-ii-simple-eda) | `data/online_retail_II.csv` |
+| Customer Support Tickets | [Kaggle link](https://www.kaggle.com/datasets/suraj520/customer-support-ticket-dataset) | `data/support_tickets.csv` |
+| Telco Customer Churn | [Kaggle link](https://www.kaggle.com/datasets/blastchar/telco-customer-churn) | `data/telco_customer_churn.csv` |
 
-> Download the dataset from Kaggle and place it inside `notebooks/data/retail_cleaned.csv` to run the notebooks successfully.
-
-### 2️⃣ Customer Support Tickets Dataset
-- 8,469 support tickets — ticket volume, resolution time, and customer satisfaction analysis
-- Cleaned CSV is uploaded to GitHub — `notebooks/data/support_cleaned.csv`
-
-### 3️⃣ Telecom Customer Churn Dataset
-- 7,032 customer records — churn analysis and modeling
-- Cleaned CSV is uploaded to GitHub — `notebooks/data/telco_cleaned.csv`
+> Create a `data/` folder at the **project root** (same level as `notebooks/`), place all three downloaded files there with the exact filenames above, then run `02_Data_Loading_and_Cleaning.ipynb` — it will clean the data and automatically save the processed versions to `notebooks/data/` for the rest of the notebooks to use.
 
 ---
 
@@ -70,10 +63,10 @@ This project uses **three datasets**:
 Defined business problems and KPIs; identified revenue and churn-related questions.
 
 ### Phase 2: Data Cleaning & Preparation
-Handled missing and inconsistent values, created derived metrics (e.g., `TotalAmount`, `Churn_flag`), saved cleaned datasets for analysis.
+Loads raw data from `data/`, handles missing and inconsistent values, creates derived metrics (e.g., `TotalAmount`, `Churn_flag`), and saves cleaned datasets to `notebooks/data/` for the rest of the pipeline.
 
 ### Phase 3: SQL Analysis
-Revenue by country and month, top-selling products, support ticket performance, churn rate by contract type — 10 queries run against an in-memory SQLite database inside `03_SQL_Analysis.ipynb`, with outputs saved to `sql/sql_queries_output/`.
+Revenue by country and month, top-selling products, support ticket performance, churn rate by contract type — 10 queries run against an in-memory SQLite database inside `03_SQL_Analysis.ipynb`, with outputs saved to `sql_queries_output/`.
 
 ### Phase 4: Machine Learning Modeling
 Trained a Random Forest classifier to predict customer churn; evaluated with accuracy, precision, recall, and feature importance. Also tested class-balancing to address churn-class imbalance — see Model Performance below for results.
@@ -135,13 +128,13 @@ cd Customer-Analytics-Churn-Prediction-Project
 pip install -r requirements.txt
 ```
 
-### 3️⃣ Get the Retail Dataset
-Download from the [Kaggle link above](https://www.kaggle.com/code/mashlyn/onlineretail-ii-simple-eda) and place it at `notebooks/data/retail_cleaned.csv`.
+### 3️⃣ Download the Datasets
+Download all three datasets from the Kaggle links above, and place them in a `data/` folder at the project root using the exact filenames listed in the Datasets table.
 
 ### 4️⃣ Run the Notebooks
 Open Jupyter and run the notebooks **in order**:
 1. `01_Business_Understanding.ipynb`
-2. `02_Data_Loading_and_Cleaning.ipynb`
+2. `02_Data_Loading_and_Cleaning.ipynb` 
 3. `03_SQL_Analysis.ipynb`
 4. `04_ML_Modeling.ipynb`
 5. `05_Data_Visualization.ipynb`
@@ -153,21 +146,21 @@ Open Jupyter and run the notebooks **in order**:
 ```
 Customer-Analytics-Churn-Prediction-Project/
 │
+├── data/                          
+│   ├── online_retail_II.csv
+│   ├── support_tickets.csv
+│   └── telco_customer_churn.csv
+│
 ├── notebooks/
-│   ├── data/
-│   │   ├── support_cleaned.csv
-│   │   ├── telco_cleaned.csv
-│   │   └── retail_cleaned.csv (download from Kaggle)
-│   │
 │   ├── 01_Business_Understanding.ipynb
 │   ├── 02_Data_Loading_and_Cleaning.ipynb
 │   ├── 03_SQL_Analysis.ipynb
 │   ├── 04_ML_Modeling.ipynb
 │   └── 05_Data_Visualization.ipynb
+│ 
 │
-├── sql/
-│   └── sql_queries_output/
-│       └── *.csv
+├── sql_queries_output/
+│   └── *.csv
 │
 ├── visualizations/
 │   └── *.png
